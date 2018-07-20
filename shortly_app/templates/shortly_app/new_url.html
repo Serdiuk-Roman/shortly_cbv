@@ -1,0 +1,12 @@
+{% extends "shortly_app/base.html" %}
+
+{% block title %}Create New Short URL{% endblock %}
+
+{% block body %}
+  <h2>Submit URL</h2>
+  <form method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Shorten</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "shortly_app/base.html" %}
+
+{% block title %}Create New Short URL{% endblock %}
+
+{% block body %}
+  {% if all_el %}
+    <h2>Popular links</h2>
+    <ul>
+    {% for el in all_el %}
+      <li>
+        <a href="/follow/{{el.url_id}}">/{{el.url_id}}</a>
+        <span>: </span>
+        <a href="/detail/{{el.url_id}}">detail</a>
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endblock %}
